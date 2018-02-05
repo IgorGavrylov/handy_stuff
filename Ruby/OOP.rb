@@ -169,4 +169,98 @@ module MyLibrary
 	FAVE_BOOK = "American gods"
 end
 
+puts MyLibrary::FAVE_BOOK
 puts Math::PI
+
+############################################################
+############################################################
+
+module Action
+  def jump
+    @distance = rand(4) + 2
+    puts "I jumped forward #{@distance} feet!"
+  end
+end
+
+class Rabbit
+  include Action
+  attr_reader :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+class Cricket
+  include Action
+  attr_reader :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+peter = Rabbit.new("Peter")
+jiminy = Cricket.new("Jiminy")
+
+peter.jump
+jiminy.jump
+
+############################################################
+############################################################
+
+module MartialArts
+	def swordsman
+		puts "I'm a swordsman"
+	end
+end
+
+class Ninja
+	include MartialArts
+  def initialize(clan)
+    @clan = clan
+  end
+end
+
+class Samurai
+	include MartialArts
+  def initialize(shogun)
+    @shogun = shogun
+  end
+end
+
+############################################################
+############################################################
+
+class Application
+  attr_accessor :status
+  def initialize; end
+
+  public
+  def print_status
+  	puts "All systems go!"
+  end
+
+  private
+  def password
+  	return 12345
+  end
+  
+end
+
+
+############################################################
+############################################################
+
+module Languages
+  FAVE = "Python"
+end
+
+class Master
+	include Languages
+  def initialize; end
+  def victory
+    puts FAVE
+  end
+end
+
+total = Master.new
+total.victory
