@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:latest
 MAINTAINER Igor
 
 RUN apt-get update && \
@@ -10,4 +10,4 @@ RUN apt-get update && \
 
 EXPOSE 80/tcp 443/tcp
 
-CMD ["nginx","-g","daemon off;"]
+CMD /bin/echo Hello world && nginx -g "daemon off;"
