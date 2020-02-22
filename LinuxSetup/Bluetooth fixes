@@ -1,0 +1,9 @@
+Copied BCM20702A1-0a5c-21f3.hcd to /lib/firmware/brcm/
+Renamed into BCM.hcd
+
+lsusb | grep Bluetooth
+dmesg
+
+
+./hex2hcd ../BCMxxxx.xxx.xxx.xx.hex fw-0a5c_21d7.hcd (Replace 0a5c_21d7 with your id)
+sudo cp fw* /lib/firmware
